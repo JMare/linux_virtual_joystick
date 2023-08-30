@@ -27,14 +27,14 @@ fn main() {
     let window: gtk::Window = builder.get_object("LVJ-Window").unwrap();
     
     //Initialize the handlers for all the sliders
-    for i in 0..6{
-        let axis_adjustment: gtk::Adjustment = builder.get_object(format!("Analog{}",i+1).as_str()).unwrap();
-        let current_controller_interface = con_interface.clone();
-        axis_adjustment.connect_value_changed( move |adj| {
-            //println!("Axis {} changed to {}.", i, adj.get_value());
-            current_controller_interface.lock().unwrap().axes_change(i, adj.get_value());
-        });
-    }
+//    for i in 0..6{
+//        let axis_adjustment: gtk::Adjustment = builder.get_object(format!("Analog{}",i+1).as_str()).unwrap();
+//        let current_controller_interface = con_interface.clone();
+//        //axis_adjustment.connect_value_changed( move |adj| {
+//            //println!("Axis {} changed to {}.", i, adj.get_value());
+//            //current_controller_interface.lock().unwrap().axes_change(i, adj.get_value());
+//        //});
+//    }
 
     //Initialize the handlers for all the buttons
     for i in 0..15{
